@@ -29,3 +29,9 @@ CREATE TABLE "Items Details" (
   "ItemPrice" INT,
   "ItemFunction" VARCHAR
 );
+
+INSERT INTO "UserCredentials" ("Username", "PasswordHash", "Salt")
+VALUES
+  ('john', crypt('password123', gen_salt('bf')), gen_salt('bf')),
+  ('jane', crypt('abc123', gen_salt('bf')), gen_salt('bf')),
+  ('bob', crypt('pass123', gen_salt('bf')), gen_salt('bf'));

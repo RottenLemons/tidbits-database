@@ -13,3 +13,13 @@ INSERT INTO "Items Details" ("ItemName", "ItemDescription", "ItemPrice", "ItemFu
 VALUES ('Item1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 10, 'Function1'),
        ('Item2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 20, 'Function2'),
        ('Item3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 30, 'Function3');
+
+CREATE TABLE "UserCredentials" (
+  "UID" SERIAL PRIMARY KEY,
+  "Username" VARCHAR UNIQUE NOT NULL,
+  "PasswordHash" VARCHAR NOT NULL,
+  "Salt" VARCHAR NOT NULL
+);
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
